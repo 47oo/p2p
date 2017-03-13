@@ -2,6 +2,7 @@ package com.p2p.server;
 
 import com.p2p.handler.HttpHandler;
 import com.p2p.handler.WebSocketHandler;
+import com.p2p.parseXml.ParseCfg;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -18,8 +19,11 @@ import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
 
 public class ChatServer {
-
+	
 	private int port = 2222;
+	public ChatServer(int port){
+		this.port =port;
+	}
 
 	public void start() {
 		// 主从模式、创建主线程
@@ -69,6 +73,6 @@ public class ChatServer {
 
 	}
 	public static void main(String[] args) {
-		new ChatServer().start();
+		new ChatServer(ParseCfg.getPort()).start();
 	}
 }

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<users>
-	<user id="47oo" password="1234">
-		<friend id="jack"/>
-	</user>
-	<user id="jack" password="1234">
-		<friend id="47oo"/>
-	</user>
-</users>
